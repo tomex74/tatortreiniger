@@ -8,7 +8,7 @@ export default function Home() {
           <div className="text-2xl font-bold">Tatortreiniger</div>
           <ul className="flex space-x-4">
             <li><a href="#hero" className="hover:underline">Home</a></li>
-            <li><a href="#services" className="hover:underline">Services</a></li>
+            <li><a href="#services" className="hover:underline">Dies und Das</a></li>
             <li><a href="#about" className="hover:underline">Über mich</a></li>
             <li><a href="#portfolio" className="hover:underline">Portfolio</a></li>
             <li><a href="#contact" className="hover:underline">Kontakt</a></li>
