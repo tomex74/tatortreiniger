@@ -5,13 +5,13 @@ export default function Home() {
       {/* Header */}
       <header className="bg-blue-600 text-white py-4 fixed w-full z-50">
         <nav className="container mx-auto flex justify-between items-center">
-          <div className="text-2xl font-bold">Onepager</div>
+          <div className="text-2xl font-bold">Tatortreiniger</div>
           <ul className="flex space-x-4">
             <li><a href="#hero" className="hover:underline">Home</a></li>
             <li><a href="#services" className="hover:underline">Services</a></li>
-            <li><a href="#about" className="hover:underline">About</a></li>
+            <li><a href="#about" className="hover:underline">Über mich</a></li>
             <li><a href="#portfolio" className="hover:underline">Portfolio</a></li>
-            <li><a href="#contact" className="hover:underline">Contact</a></li>
+            <li><a href="#contact" className="hover:underline">Kontakt</a></li>
           </ul>
         </nav>
       </header>
