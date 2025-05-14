@@ -169,33 +169,51 @@
     }
 
     .about img {
-      flex: 1 1 350px;
+      flex: 1 1 45%; /* Angepasst auf nahezu 50% */
+      max-width: 45%; /* Begrenzt die Bildgröße */
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      filter: blur(2px);
+      filter: blur(1px);
+      object-fit: cover;
+      width: 100%;
+      height: auto;
     }
 
     .about-content {
-      flex: 2 1 400px;
+      flex: 1 1 45%; /* Angepasst auf nahezu 50% */
     }
 
+    /* Zertifizierungsliste */
     .cert-list {
-      list-style: none;
-      margin-top: 1rem;
+      list-style-type: none;
+      margin-left: 0.5rem;
+      padding-left: 1.5rem;
     }
 
     .cert-list li {
-      margin-bottom: 0.5rem;
-      padding-left: 1.5rem;
       position: relative;
+      padding: 0.4rem 0;
+      margin-bottom: 0.5rem;
     }
 
-    .cert-list li::before {
-      content: "✔";
-      position: absolute;
-      left: 0;
+    .cert-list li:before {
+      content: "✓";
       color: var(--color-accent);
-      font-weight: 700;
+      font-weight: bold;
+      position: absolute;
+      left: -1.5rem;
+    }
+
+    /* Zusätzliche responsive Anpassungen */
+    @media (max-width: 768px) {
+      .about {
+        flex-direction: column; /* Auf kleineren Bildschirmen untereinander anordnen */
+      }
+      
+      .about img {
+        max-width: 100%; /* Volle Breite auf mobilen Geräten */
+        margin-bottom: 1rem;
+      }
     }
 
     /* Before After */
@@ -354,33 +372,38 @@
     <div class="services-grid">
       <div class="service-card">
         <img src="pics/icons/icons8-cleaning-50.png" alt="Tatort & Unfallreinigung" />
-        <h3>Tatort & Unfallreinigung</h3>
-        <p>Sichere Entfernung aller Spuren, gründliche Desinfektion der Einsatzstelle.</p>
+        <h3>Tatort & Unfallreinigung</h3><br>
+        <p>Nach einem Todesfall, Unfall oder Verbrechen ist eine fachgerechte Reinigung unerlässlich. Wir entfernen alle biologischen Rückstände sicher, desinfizieren gründlich und stellen die hygienische Unbedenklichkeit der Räumlichkeiten wieder her – diskret, schnell und gesetzeskonform.</p>
       </div>
       <div class="service-card">
         <img src="pics/icons/icons8-deodorant-50.png" alt="Geruchsneutralisation" />
-        <h3>Geruchsneutralisation</h3>
-        <p>Langfristige Beseitigung von Gerüchen durch Ozon- & Fogging-Verfahren.</p>
+        <h3>Geruchsneutralisation</h3><br>
+        <p>Hartnäckige Gerüche – verursacht durch Verwesung, Nikotin, Schimmel oder Tierhaltung – werden von uns professionell beseitigt. Wir setzen moderne Verfahren wie Ozonbehandlung oder Fogging ein, um Räume dauerhaft und rückstandsfrei zu neutralisieren.</p>
       </div>
       <div class="service-card">
         <img src="pics/icons/icons8-trash-can-50.png" alt="Wohnungsräumungen" />
-        <h3>Wohnungsräumungen</h3>
-        <p>Komplette Entrümpelung, Reinigung und Desinfektion stark verunreinigter Objekte.</p>
+        <h3>Wohnungsräumungen</h3><br>
+        <p>Ob nach einem Todesfall, bei einer Zwangsräumung oder einer Verwahrlosung – wir übernehmen die vollständige Räumung und fachgerechte Entsorgung von Hausrat und Sondermüll. Auf Wunsch kümmern wir uns auch um Reinigung, Desinfektion und Geruchsbeseitigung.</p>
       </div>
     </div>
   </section>
 
   <!-- About us -->
   <section class="about" id="about">
-    <img src="https://source.unsplash.com/600x600/?team,cleaning" alt="Unser Team" />
+    <img src="pics/team-skizze.jpg" alt="Unser Team" />
     <div class="about-content">
-      <h2>Wer wir sind</h2>
-      <p>Als zertifiziertes Tatortreinigungsunternehmen unterstützen wir Hinterbliebene, Behörden und Versicherungen seit über 15 Jahren. Diskretion, Empathie und höchste Hygienestandards stehen für uns an erster Stelle.</p>
-      <ul class="cert-list">
-        <li>IHK-geprüfter Desinfektor</li>
-        <li>TÜV ISO 9001 Qualitätsmanagement</li>
-        <li>§18 Infektionsschutzgesetz Zulassung</li>
+      <h2>Wer wir sind</h2><br>
+      <p>Als zertifiziertes Tatortreinigungsunternehmen stehen wir Hinterbliebenen, Behörden, Hausverwaltungen und Versicherungen zuverlässig zur Seite. Unsere tägliche Arbeit erfordert nicht nur höchste fachliche Kompetenz, sondern auch Feingefühl im Umgang mit oftmals belastenden Ausnahmesituationen.<br><br>
+         Diskretion, Empathie und die Einhaltung strengster Hygienestandards sind für uns selbstverständlich. Unsere Mitarbeiter sind fachlich geschult, psychologisch sensibilisiert und für den Ernstfall bestens vorbereitet.</p>
+      <br>
+         <p>Wir verfügen über:</p><br>
+         <ul class="cert-list">
+        <li>IHK-geprüfte Qualifikation zum Desinfektor</li>
+        <li>TÜV-zertifiziertes Qualitätsmanagement nach ISO 9001</li>
+        <li>Zulassung nach §18 Infektionsschutzgesetz</li>
       </ul>
+      <br>
+      <p>Verlassen Sie sich auf einen Partner, der Professionalität mit Menschlichkeit verbindet.</p>
     </div>
   </section>
 
@@ -495,4 +518,3 @@
   </script>
 </body>
 </html>
-``` 
