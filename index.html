@@ -351,6 +351,76 @@
     @media (prefers-reduced-motion: reduce) {
       * { transition: none !important; }
     }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.7);
+      animation: fadeIn 0.3s;
+    }
+
+    .modal-content {
+      background-color: var(--color-bg);
+      margin: 5% auto;
+      padding: 2rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      width: 80%;
+      max-width: 800px;
+      max-height: 80vh;
+      overflow-y: auto;
+      position: relative;
+      animation: slideIn 0.3s;
+    }
+
+    .close-modal {
+      color: #aaa;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close-modal:hover {
+      color: #333;
+    }
+
+    .impressum-content {
+      margin-top: 1.5rem;
+    }
+
+    .impressum-content h3 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes slideIn {
+      from {transform: translateY(-50px); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
+    }
+
+    @media (max-width: 768px) {
+      .modal-content {
+        width: 90%;
+        padding: 1.5rem;
+        margin: 10% auto;
+      }
+    }
   </style>
 </head>
 <body>
@@ -361,7 +431,7 @@
          <img src="pics/LandingPage-1920.jpg" alt="Tatortreiniger Logo" style="max-width:100%; width:auto; height:auto; margin-bottom:1rem;" />
     </div>
     <div class="hero-content">
-      <h2>24/7 Tatortreinigung für Mecklenburg-Vorpommern • Diskret &amp; Zertifiziert</h2>
+      <h2>24/7 Tatortreinigung für Mecklenburg-Vorpommern <br> Ihr zuverlässiger Partner für Sauberkeit und Ordnung</h2>
       <a class="btn-primary" href="tel:+01636764121">Jetzt anrufen</a>
     </div>
   </section>
@@ -473,8 +543,81 @@
   <!-- Footer -->
   <footer>
     <p>© 2025 zertifizierter Desinfektor & Tatortreiniger · Mecklenburg-Vorpommern</p>
-    <small><a href="#" style="color:#fff;text-decoration:underline;">Datenschutz</a> · <a href="#" style="color:#fff;text-decoration:underline;">Impressum</a></small>
+    <small><a href="#" style="color:#fff;text-decoration:underline;" title="Datenschutz">Datenschutz</a> · <a href="#" style="color:#fff;text-decoration:underline;" title="Impressum">Impressum</a></small>
   </footer>
+
+  <!-- Impressum Modal -->
+  <div id="impressum-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h2>Impressum</h2>
+      <div class="impressum-content">
+        <h3>Angaben gemäß § 5 TMG</h3>
+        <p>Tatortreinigung <br>
+        Max Mustermann<br>
+        Musterstraße 123<br>
+        18055 Rostock</p>
+        
+        <h3>Kontakt</h3>
+        <p>Telefon: 0163 6764121<br>
+        E-Mail: sgdstandfuss@gmail.com</p>
+        
+        <h3>Umsatzsteuer-ID</h3>
+        <p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br>
+        DE123456789</p>
+        
+        <h3>Berufsbezeichnung und berufsrechtliche Regelungen</h3>
+        <p>Berufsbezeichnung: Zertifizierter Desinfektor<br>
+        Zuständige Kammer: IHK zu Rostock<br>
+        Verliehen in: Deutschland</p>
+        
+        <h3>Angaben zur Berufshaftpflichtversicherung</h3>
+        <p>Name und Sitz des Versicherers:<br>
+        Muster-Versicherung AG<br>
+        Musterplatz 1<br>
+        12345 Musterstadt</p>
+        
+        <h3>Streitschlichtung</h3>
+        <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Datenschutz Modal -->
+  <div id="datenschutz-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h2>Datenschutzerklärung</h2>
+      <div class="impressum-content">
+        <h3>1. Datenschutz auf einen Blick</h3>
+        <p><strong>Allgemeine Hinweise</strong><br>
+        Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.</p>
+        
+        <h3>2. Datenerfassung auf dieser Website</h3>
+        <p><strong>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</strong><br>
+        Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Impressum dieser Website entnehmen.</p>
+        <br>
+        <p><strong>Wie erfassen wir Ihre Daten?</strong><br>
+        Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z. B. um Daten handeln, die Sie in ein Kontaktformular eingeben.</p>
+        
+        <p>Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z. B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs).</p>
+        
+        <h3>3. Wofür nutzen wir Ihre Daten?</h3>
+        <p>Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden.</p>
+        
+        <h3>4. Welche Rechte haben Sie bezüglich Ihrer Daten?</h3>
+        <p>Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt haben, können Sie diese Einwilligung jederzeit für die Zukunft widerrufen. Außerdem haben Sie das Recht, unter bestimmten Umständen die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.</p>
+        
+        <h3>5. Analyse-Tools und Tools von Drittanbietern</h3>
+        <p>Beim Besuch dieser Website kann Ihr Surf-Verhalten statistisch ausgewertet werden. Das geschieht vor allem mit sogenannten Analyseprogrammen.</p>
+        
+        <p>Diese Website verwendet keine Cookies, die Ihr Surfverhalten analysieren.</p>
+        
+        <h3>6. Hosting</h3>
+        <p>Wir hosten die Inhalte unserer Website bei einem klassischen Webhosting-Anbieter. Personenbezogene Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters gespeichert. Hierbei kann es sich v. a. um IP-Adressen, Kontaktanfragen, Meta- und Kommunikationsdaten, Vertragsdaten, Kontaktdaten, Namen, Websitezugriffe und sonstige Daten, die über eine Website generiert werden, handeln.</p>
+      </div>
+    </div>
+  </div>
 
   <!-- Scripts -->
   <script>
@@ -512,6 +655,72 @@
           ans.style.maxHeight = null;
         } else {
           ans.style.maxHeight = ans.scrollHeight + 'px';
+        }
+      });
+    });
+
+    // Modal für Impressum und Datenschutz
+(function(){
+  // Modal-Elemente
+  const impressumModal = document.getElementById('impressum-modal');
+  const impressumLink = document.querySelector('a[href="#"][title="Impressum"]');
+  const closeButtons = document.querySelectorAll('.close-modal');
+  
+  // Event-Listener für Impressum-Link
+  if(impressumLink) {
+    impressumLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      impressumModal.style.display = "block";
+      document.body.style.overflow = "hidden"; // Verhindert Scrollen im Hintergrund
+    });
+  }
+  
+  // Event-Listener für Schließen-Buttons
+  closeButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      impressumModal.style.display = "none";
+      document.body.style.overflow = ""; // Scrollen wieder aktivieren
+    });
+  });
+  
+  // Schließen beim Klick außerhalb des Modals
+  window.addEventListener('click', function(e) {
+    if (e.target === impressumModal) {
+      impressumModal.style.display = "none";
+      document.body.style.overflow = "";
+    }
+  });
+  })();
+
+    // Modal für Datenschutz
+    (function(){
+      const datenschutzModal = document.getElementById('datenschutz-modal');
+      const datenschutzLink = document.querySelector('a[href="#"][title="Datenschutz"]');
+      const closeButtons = document.querySelectorAll('.close-modal');
+      
+      if(datenschutzLink) {
+        datenschutzLink.addEventListener('click', function(e) {
+          e.preventDefault();
+          datenschutzModal.style.display = "block";
+          document.body.style.overflow = "hidden";
+        });
+      }
+      
+      closeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          datenschutzModal.style.display = "none";
+          document.body.style.overflow = "";
+        });
+      });
+    })();
+
+    // Schließen beim Klick außerhalb des Modals
+    window.addEventListener('click', function(e) {
+      const modals = document.querySelectorAll('.modal');
+      modals.forEach(modal => {
+        if (e.target === modal) {
+          modal.style.display = "none";
+          document.body.style.overflow = "";
         }
       });
     });
