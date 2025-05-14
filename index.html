@@ -421,6 +421,68 @@
         margin: 10% auto;
       }
     }
+
+    /* Kontakt-Styles */
+    .contact {
+      padding: 4rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .contact-container {
+      background: var(--color-light);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 2rem;
+    }
+
+    .contact-info {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .contact-methods {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .contact-method {
+      flex: 1 1 200px;
+      background: var(--color-bg);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-method img {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 1rem;
+    }
+
+    .contact-method a {
+      color: var(--color-primary);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .contact-method a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .contact-methods {
+        flex-direction: column;
+      }
+      
+      .contact-method {
+        max-width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
@@ -487,7 +549,7 @@
     <input type="range" min="0" max="100" value="50" aria-label="Slider zum Vergleichen" />
   </section>  / After -->
 
-  <!-- Testimonials -->
+  <!-- Testimonials 
   <section class="testimonials" id="stimmen">
     <h2 style="text-align:center;margin-bottom:2rem;">Kundenstimmen</h2>
     <div class="testimonial-wrap">
@@ -506,6 +568,32 @@
         <p>„Nach der Entrümpelung meiner Messie-Wohnung konnte ich endlich wieder einziehen. Lebensretter!“</p>
         <cite>– Frau S., Augsburg</cite>
       </blockquote>
+    </div>
+  </section>
+-->
+   <!-- Kontakt -->
+  <section class="contact" id="kontakt">
+    <h2 style="text-align:center;margin-bottom:2rem;">Kontakt</h2>
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3>Wir sind für Sie da</h3><br>
+        <p>In Notfällen und für Beratungen stehen wir Ihnen rund um die Uhr zur Verfügung. Kontaktieren Sie uns – wir reagieren umgehend und diskret.</p>
+        <br>
+        <div class="contact-methods">
+          <div class="contact-method">
+            <img src="pics/icons/icons8-phone-60.png" alt="Telefon" />
+            <h4>Telefon (24/7)</h4>
+            <p><a href="tel:+4901636764121">+49 (0)163 676 41 21</a></p>
+          </div>
+          <div class="contact-method">
+            <img src="pics/icons/icons8-at-sign-60.png" alt="E-Mail" />
+            <h4>E-Mail</h4>
+            <p><a href="mailto:sgdstandfuss@gmail.com">sgdstandfuss@gmail.com</a></p>
+          </div>
+        </div>
+        <br>
+        <p>Unser Einsatzgebiet umfasst ganz Mecklenburg-Vorpommern mit Schwerpunkt im Raum Rostock, Schwerin, Wismar, Stralsund und Greifswald. Für dringende Notfälle garantieren wir eine Anfahrtszeit von maximal 90 Minuten.</p>
+      </div>
     </div>
   </section>
 
@@ -533,6 +621,8 @@
       <div class="faq-answer"><p>Wo immer möglich setzen wir biologisch abbaubare Desinfektionsmittel ein, ohne Kompromisse bei der Wirksamkeit.</p></div>
     </div>
   </section>
+
+ 
 
   <!-- Sticky Emergency Bar -->
   <div class="sticky-bar" role="banner">
