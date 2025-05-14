@@ -69,6 +69,7 @@
       position: absolute;
       z-index: 2;
       max-width: 800px;
+      width: 90%; /* Maximale Breite im Verhältnis zum Viewport */
       padding: 2rem;
       background-color: rgba(70, 72, 75, 0.65);
       border-radius: var(--radius);
@@ -95,6 +96,34 @@
     }
 
     .btn-primary:hover { opacity: 0.9; }
+
+    /* Responsive Anpassungen */
+    @media (max-width: 768px) {
+      .hero-content {
+        width: 95%;
+        padding: 1.5rem 1rem;
+      }
+      
+      .hero-content h2 {
+        font-size: 1.5rem;
+      }
+      
+      .btn-primary {
+        padding: 0.6rem 1.5rem;
+        margin-top: 0.75rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-content {
+        width: 96%;
+        padding: 1rem 0.75rem;
+      }
+      
+      .hero-content h2 {
+        font-size: 1.2rem;
+      }
+    }
 
     /* Services */
     .services {
@@ -461,4 +490,3 @@
   </script>
 </body>
 </html>
-``` 
