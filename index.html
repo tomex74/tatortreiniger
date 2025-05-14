@@ -42,31 +42,44 @@
     /* Hero */
     .hero {
       position: relative;
-      background: url('https://source.unsplash.com/1600x900/?hazmat,cleaning') center/cover no-repeat;
-      min-height: 80vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       color: #fff;
+      overflow: hidden;
     }
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(15,30,55,0.65);
+    .hero-bg {
+      position: relative;
+      width: 100%;
+      z-index: 0;
+    }
+
+    .hero-bg img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      object-position: center;
+      filter: blur(3px) brightness(0.7);
     }
 
     .hero-content {
-      position: relative;
-      z-index: 1;
+      position: absolute;
+      z-index: 2;
       max-width: 800px;
-      padding: 0 1rem;
+      padding: 2rem;
+      background-color: rgba(70, 72, 75, 0.65);
+      border-radius: var(--radius);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
 
     .hero h1 {
       font-size: clamp(2rem, 6vw, 3rem);
+      color: var(--color-accent);
       margin-bottom: 1rem;
     }
 
@@ -293,7 +306,7 @@
   <!-- Hero -->
   <section class="hero">
     <div class="hero-bg">
-         <img src="pics/LandingPage.jpg" alt="Tatortreiniger Logo" style="max-width:100%; width:auto; height:auto; margin-bottom:1rem;" />
+         <img src="pics/LandingPage-1920.jpg" alt="Tatortreiniger Logo" style="max-width:100%; width:auto; height:auto; margin-bottom:1rem;" />
     </div>
     <div class="hero-content">
       <h2>24/7 Tatortreinigung für Mecklenburg-Vorpommern • Diskret &amp; Zertifiziert</h2>
@@ -448,3 +461,4 @@
   </script>
 </body>
 </html>
+``` 
